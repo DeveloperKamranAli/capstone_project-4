@@ -1,0 +1,30 @@
+.background-color{
+    background-color: rgb(72,175,255);
+}
+
+
+.input-text{
+    outline: none;
+}
+
+.btn-login{
+    color: rgb(72,175,255);
+}
+
+.btn-login:hover{
+   background-color:  rgb(72,175,255) !important;
+   color: white !important;
+}
+
+.btn-register:hover{
+      background-color:  white;
+      color:   rgb(72,175,255) !important;
+}
+
+
+/* Register page css */
+
+.outline-B{
+    outline: none !important;
+    border: 2px solid rgb(72,175,255);
+}
