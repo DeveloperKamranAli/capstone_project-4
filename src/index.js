@@ -3,11 +3,12 @@ import App from "./App";
 import Layout from "./components/LayoutSectio/layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import  store  from "./store";
 import Login from "./components/LoginPage/login";
 import Register from "./components/RegisterPage/register";
 import TrackOrder from "./components/TrackOrderPage/trackOrder";
 import Profile from "./components/ProfileSection/Profile";
+import ProductDetails from "./components/ProductsOne/ProductDetail";
 // import Product from "./components/productsSection/products";
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "ProfileSection",
         element: <Profile />,
+      },
+      {
+      path: "ProductsOne",
+      element: <ProductDetails />
       },
     ],
   },

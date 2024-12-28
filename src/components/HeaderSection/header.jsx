@@ -147,7 +147,7 @@ const Header = () => {
   useEffect(() => {
     const storedLoginStatus = localStorage.getItem("isLoggedIn");
     if (storedLoginStatus === "true") {
-      setIsLoggedIn(true);
+      setIsLoggedIn(true);  
     }
   }, [location]); 
 
@@ -181,7 +181,7 @@ const Header = () => {
                 >
                   <Box>
                     <Typography className="d-flex flex-column justify-content-center h-50 mb-5 mt-4">
-                      <img className="w-50 mb-2" src={Logo} alt="" />
+                      <Link to="Header"><img className="w-50 mb-2" src={Logo} alt="" /></Link>
                       <Button
                         className="btn-login border  w-50 me-3 px-3 mb-2 bg-white"
                         style={{ color: "rgb(72,175,255)" }}

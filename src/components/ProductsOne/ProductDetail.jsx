@@ -1,26 +1,31 @@
-import { useParams } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import React from "react";
 
-function ProductDetails() {
-  const { id } = useParams();
-
-  const products = [
-    { id: 1, name: "Product 1", description: "Description of Product 1" },
-    { id: 2, name: "Product 2", description: "Description of Product 2" },
-    { id: 3, name: "Product 3", description: "Description of Product 3" },
-  ];
-
-  const product = products.find((p) => p.id === parseInt(id));
-
-  if (!product) {
-    return <h2>Product not found</h2>;
+const productDetail = [
+  {
+    id: 1,
+    name: "Nothing Buds Pro 2",
   }
-
+]
+const ProductDetail = () => {
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-    </div>
-  );
-}
+    <>
+      <Box className="Regular shadow mb-4">
+        <Box className="py-1 container">
+          <Typography className="text-secondary " variant="body">
+            Wireless Earbuds > CMF > Nothing Buds Pro 2
+          </Typography>
+          <Typography className="me-4">
+            Buy Nothing Buds Pro 2 Price in Pakistan
+          </Typography>
+        </Box>
+      </Box>
 
-export default ProductDetails;
+      <Box>
+
+      </Box>
+    </>
+  );
+};
+
+export default ProductDetail;
