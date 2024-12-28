@@ -8,6 +8,7 @@ import Login from "./components/LoginPage/login";
 import Register from "./components/RegisterPage/register";
 import TrackOrder from "./components/TrackOrderPage/trackOrder";
 import Profile from "./components/ProfileSection/Profile";
+import Product from "./components/productsSection/products";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <App />,
+      },
+      {
+        path: "productsSection",
+        element: <Product />
       },
       {
         path: "LoginPage",

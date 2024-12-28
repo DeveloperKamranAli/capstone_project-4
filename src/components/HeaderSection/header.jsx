@@ -16,10 +16,13 @@ import Logo from "../../assets Pic/logo.svg";
 import {
   Collapse,
   Divider,
+  IconButton,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 // assets images category
 import mobiles from "../../assets Pic/pk-galaxy.avif";
@@ -27,7 +30,8 @@ import WatchIcon from "@mui/icons-material/Watch";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
 // router pages
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { AccountCircle } from "@mui/icons-material";
 
 const popularLists = [
   { name: "Best Smart Watches" },
@@ -123,6 +127,9 @@ const MainNavigation = () => {
 const Header = () => {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  
 
   const handleCategoryClick = (categoryName) => {
     setExpandedCategory(
@@ -142,7 +149,21 @@ const Header = () => {
     if (storedLoginStatus === "true") {
       setIsLoggedIn(true);
     }
-  }, []);
+  }, [location]); 
+
+  // Log the current location whenever it changes
+  useEffect(() => {
+    console.log('Current location:', location);
+  }, [location]);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
   return (
     <>
@@ -333,16 +354,44 @@ const Header = () => {
 
             <Box className="d-md-none d-none d-md-block d-lg-block">
               {isLoggedIn ? (
-                <Button className="btn-profile border me-3 px-3 bg-white">
-                  <Link to="/ProfileSection" className="text-decoration-none">
-                    My Profile
-                  </Link>
+                <Button className="btn-profile me-3 px-3">
+                  {/* <Link to="/ProfileSection" className="text-decoration-none"> */}
+                  <div>
+              <IconButton
+                className="text-white"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}><Link to="/ProfileSection" className="text-decoration-none text-dark">My Account</Link></MenuItem>
+                <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+              </Menu>
+            </div>
+                  {/* </Link> */}
                 </Button>
               ) : (
                 <>
                   <Button className="btn-login border me-3 px-3 bg-white">
                     <Link to="/LoginPage" className="text-decoration-none">
-                      Log in
+                       log in
                     </Link>
                   </Button>
                   <Button className="btn-register border px-3 text-white">

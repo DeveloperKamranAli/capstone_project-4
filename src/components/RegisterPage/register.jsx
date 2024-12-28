@@ -18,10 +18,10 @@ export default function Register() {
 
   const onSubmit = (data) => {
     console.log(data);
-
+    localStorage.setItem("userfirstName", data.firstName);
     localStorage.setItem("userEmail", data.mail);
     localStorage.setItem("userPassword", data.password);
-
+    
     console.log("User registered:", data);
     navigate("/LoginPage");
   };
@@ -36,11 +36,10 @@ export default function Register() {
           <Box>
             <img className="img-fluid mb-3" src={RegisterImg} alt="" />
           </Box>
-
-          <input
-            className="outline-B rounded-2 py-1 w-75 mb-3 bg-body"
-            {...register("firstName", { required: "First name is required" })}
-            placeholder="First Name"
+           <input
+            className="outline-B rounded-2 py-1 w-75 mb-3"
+            {...register("firstName", { required: "Last name is required" })}
+            placeholder="first Name"
           />
           {errors.firstName && <p role="alert">{errors.firstName.message}</p>}
 
