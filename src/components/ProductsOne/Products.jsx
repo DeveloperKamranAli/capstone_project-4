@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
 
@@ -79,78 +80,7 @@ const products = [
     },
 
 
-    {
-      id: 7,
-      name: "Audionic Airbud 550",
-      brand: "Audionic",
-      price: 3811,
-      retailPrice: 9990,
-      discount: "62% OFF",
-      rating: 4.8,
-      reviews: 538,
-      imageUrl: "https://images.priceoye.pk/audionic-airbud-550-pakistan-priceoye-o6fve-270x270.webp",
-      description: "High-quality wireless earbuds with a comfortable fit and impressive sound clarity."
-  },
-  {
-      id: 8,
-      name: "Anker R50i Earbuds",
-      brand: "Anker",
-      price: 4611,
-      retailPrice: 7199,
-      discount: "36% OFF",
-      rating: 4.7,
-      reviews: 30,
-      imageUrl: "https://images.priceoye.pk/anker-r50i-earbuds-pakistan-priceoye-csv44-270x270.webp",
-      description: "Experience premium audio quality with long battery life and fast charging capabilities."
-  },
-  {
-      id: 9,
-      name: "Xiaomi Redmi Buds 6 Lite",
-      brand: "Xiaomi",
-      price: 5899,
-      retailPrice: 6999,
-      discount: "16% OFF",
-      rating: 4.4,
-      reviews: 11,
-      imageUrl: "https://images.priceoye.pk/xiaomi-redmi-buds-6-lite-wireless-earbuds-pakistan-priceoye-c4dfa-270x270.webp",
-      description: "Lightweight earbuds featuring advanced noise cancellation and seamless connectivity."
-  },
-  {
-      id: 10,
-      name: "QCY T13 ANC 2",
-      brand: "QCY",
-      price: 4549,
-      retailPrice: 7399,
-      discount: "39% OFF",
-      rating: 4.1,
-      reviews: 14,
-      imageUrl: "https://images.priceoye.pk/qcy-t13-anc-2-pakistan-priceoye-uvlbc-270x270.webp",
-      description: "Affordable earbuds with active noise cancellation and crystal-clear audio quality."
-  },
-  {
-      id: 11,
-      name: "Redmi Buds 6  Wireless Earbuds",
-      brand: "Xiaomi",
-      price: 4611,
-      retailPrice: 7199,
-      discount: "36% OFF",
-      rating: 4.5,
-      reviews: 60,
-      imageUrl: "https://images.priceoye.pk/redmi-buds-6-active-wireless-earbuds-pakistan-priceoye-h6kkk-270x270.webp",
-      description: "Durable and stylish earbuds offering superb sound quality for music and calls."
-  },
-  {
-      id: 12,
-      name: "Soundpeats Wireless Earbuds",
-      brand: "Soundpeats",
-      price: 10518,
-      retailPrice: 14000,
-      discount: "25% OFF",
-      rating: 3.7,
-      reviews: 6,
-      imageUrl: "https://images.priceoye.pk/soundpeats-engine4-wireless-earbuds-pakistan-priceoye-40ifu-270x270.webp",
-      description: "Engineered for bass enthusiasts with dual drivers and ergonomic design."
-  },
+    
 
 
  
@@ -223,12 +153,12 @@ const Products = () => {
                     >
                       {/* Image */}
                       <div className="text-center mb-3">
-                        <img
+                        <Link to="/ProductsOne"><img
                           src={product.imageUrl}
                           alt={product.name}
                           className="img-fluid"
                           style={{ maxWidth: "120px", maxHeight: "120px" }}
-                        />
+                        /></Link>
                       </div>
   
                       {/* Rating */}
@@ -295,12 +225,12 @@ const Products = () => {
                     >
                       {/* Image */}
                       <div className="text-center mb-3">
-                        <img
+                      <Link to="/ProductsOne"><img
                           src={product.imageUrl}
                           alt={product.name}
                           className="img-fluid"
                           style={{ maxWidth: "120px", maxHeight: "120px" }}
-                        />
+                        /></Link> 
                       </div>
   
                       {/* Rating */}
