@@ -1,6 +1,7 @@
 import "./App.css";
 // import Header from "./Components/Header/Header.jsx";
-import Items from "./components/Items/Items.jsx";
+// import Items from "../../../Capstone-Project-master/Capstone-Project-master/src/Components/Items/Items.js";
+import Items from './components/Items/Items.jsx'
 import salebanner from "./assets Pic/cerve images sale.gif";
 import Products from "./components/ProductsOne/Products.jsx";
 
@@ -11,6 +12,7 @@ import "swiper/css/navigation";
 // Import required modules
 import { Box } from "@mui/material";
 import InfluencersVideos from "./components/RecomendedVideos/RecommandedVideos.jsx";
+import BestWatch from './components/BestSellerWatch/bestWqatch.jsx'
 import Footer from "./components/Footer/Footer.jsx";
 import Services from "./components/OurService/OurService.jsx";
 import BuyingCards from "./components/BuyReasonsCards/BuyReasons.jsx";
@@ -40,7 +42,7 @@ function App() {
 
       <InfluencersVideos />
 
-      {/* <SellingProducts/> */}
+      <BestWatch/>
       <BrandsReviews />
       <BuyingCards />
       <Services />

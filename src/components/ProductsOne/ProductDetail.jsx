@@ -18,7 +18,8 @@ const productData = [
     Colors: "Colors",
     stars: 3,
     InstallmentPlan: "https://static.priceoye.pk/icons/calender.svg",
-    imageUrl: "https://images.priceoye.pk/nothing-buds-2-pro-pakistan-priceoye-9mcqy.jpg",
+    imageUrl:
+      "https://images.priceoye.pk/nothing-buds-2-pro-pakistan-priceoye-9mcqy.jpg",
     imge1:
       "https://images.priceoye.pk/nothing-buds-2-pro-pakistan-priceoye-oz9ut.jpg",
     imge2:
@@ -90,40 +91,76 @@ const ProductDetail = () => {
                   </span>
                 </Typography>
 
-              <Box className="mt-3">
-              <Typography>
-                {product.Colors}
-              </Typography>
-              <Typography className="mt-1" style={{ width: "47vh" }}>
-              <img className="img-fluid border py-2 rounded-3 me-1" src={product.imge3} alt="" style={{ width: "11vh" }} />
-                <img className="img-fluid border py-2 rounded-3 me-1" src={product.imge1} alt="" style={{ width: "11vh" }} />
-                <img className="img-fluid border py-2 rounded-3 me-1" src={product.imge2} alt="" style={{ width: "11vh" }} />
-                <img className="img-fluid border py-2 rounded-3" src={product.imge4} alt="" style={{ width: "11vh" }} />
-              </Typography>
+                <Box className="mt-3">
+                  <Typography>{product.Colors}</Typography>
+                  <Typography className="mt-1" style={{ width: "47vh" }}>
+                    <img
+                      className="img-fluid border py-2 rounded-3 me-1"
+                      src={product.imge3}
+                      alt=""
+                      style={{ width: "11vh" }}
+                    />
+                    <img
+                      className="img-fluid border py-2 rounded-3 me-1"
+                      src={product.imge1}
+                      alt=""
+                      style={{ width: "11vh" }}
+                    />
+                    <img
+                      className="img-fluid border py-2 rounded-3 me-1"
+                      src={product.imge2}
+                      alt=""
+                      style={{ width: "11vh" }}
+                    />
+                    <img
+                      className="img-fluid border py-2 rounded-3"
+                      src={product.imge4}
+                      alt=""
+                      style={{ width: "11vh" }}
+                    />
+                  </Typography>
+                </Box>
+                <Box className="border d-flex p-2 mt-3 rounded-3 gap-2 align-items-center">
+                  <img
+                    src={product.InstallmentPlan}
+                    alt=""
+                    style={{ width: "5vh" }}
+                  />
+                  <Typography>Installment Plans Pakistan</Typography>
+                </Box>
+                <Typography
+                  className="d-flex justify-content-center mt-3"
+                  style={{ width: "47vh" }}
+                >
+                  <Button
+                    className="me-3"
+                    style={{
+                      width: "20vh",
+                      backgroundColor: "#f88b2a",
+                      color: "white",
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
+                  <Button
+                    style={{
+                      width: "20vh",
+                      backgroundColor: "#48afff",
+                      color: "white",
+                    }}
+                  >
+                    Compare
+                  </Button>
+                </Typography>
               </Box>
-              <Box className="border d-flex p-2 mt-3 rounded-3 gap-2 align-items-center">
-                  <img src={product.InstallmentPlan} alt="" style={{width:"5vh"}}/>
-                  <Typography>Installment Plans
-                  Pakistan</Typography>
-              </Box>
-              <Typography className="d-flex justify-content-center mt-3" style={{ width: "47vh" }}>
-              <Button className="me-3" style={{width:"20vh", backgroundColor:"#f88b2a", color:"white"}}>Add to Cart</Button>
-              <Button style={{width:"20vh", backgroundColor:"#48afff", color:"white"}}>Compare</Button>
-              </Typography>
-
-              </Box>
-
-
             </Box>
           </Container>
         </Box>
-    
       ))}
 
       <Box className="py-3 shadow p-3 mb-2 bg-body-tertiary rounded">
         <OurService />
       </Box>
-
     </>
   );
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 import service1 from "../../assets Pic/approved-feature.svg";
 import service2 from "../../assets Pic/warranty-feature.svg";
 import service3 from "../../assets Pic/video-shooting-camera.svg";

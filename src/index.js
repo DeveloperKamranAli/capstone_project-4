@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import  store  from "./store";
 import Login from "./components/LoginPage/login";
 import Register from "./components/RegisterPage/register";
-import TrackOrder from "./components/TrackOrderPage/trackOrder";
+import TrackOrder from "./components/Trackorder/TrackOrder";
 import Profile from "./components/ProfileSection/Profile";
 import ProductDetails from "./components/ProductsOne/ProductDetail";
 // import Product from "./components/productsSection/products";

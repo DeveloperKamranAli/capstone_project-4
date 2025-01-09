@@ -21,7 +21,7 @@ export default function Register() {
     localStorage.setItem("userfirstName", data.firstName);
     localStorage.setItem("userEmail", data.mail);
     localStorage.setItem("userPassword", data.password);
-    
+
     console.log("User registered:", data);
     navigate("/LoginPage");
   };
@@ -36,7 +36,7 @@ export default function Register() {
           <Box>
             <img className="img-fluid mb-3" src={RegisterImg} alt="" />
           </Box>
-           <input
+          <input
             className="outline-B rounded-2 py-1 w-75 mb-3"
             {...register("firstName", { required: "Last name is required" })}
             placeholder="first Name"

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +17,7 @@ import iv8 from "../../videos/iv-8.mp4";
 import iv9 from "../../videos/iv-9.mp4";
 import iv10 from "../../videos/iv-10.mp4";
 
-// import images 
+// import images
 import productImage from "../../assets Pic/redmi-img.jpeg";
 import productImage2 from "../../assets Pic/iv2-img.jpg";
 import productImage3 from "../../assets Pic/iv-img-3.jpg";
@@ -32,24 +31,116 @@ import productImage10 from "../../assets Pic/iv-img-10.jpg";
 
 const InfluencersVideos = () => {
   const videoCards = [
-    { video: iv1, image: productImage, title: "Redmi Watch 5 Lite", price: "11,699", oldPrice: "15,999", rating: "4.8", reviews: "4", discount: "27%" },
-    { video: iv2, image: productImage2, title: "Anker A30i  Earbuds ", price: "7,200", oldPrice: "9,000", rating: "5.0", reviews: "0", discount: "20%" },
-    { video: iv3, image: productImage3, title: "JS Watch 6 SmartWatch ", price: "4,799", oldPrice: "6,500", rating: "4.5", reviews: "", discount: "26%" },
-    { video: iv4, image: productImage4, title: "Lenovo Livepods XT81 ", price: "11,999", oldPrice: "31,999", rating: "4.8", reviews: "8", discount: "63%" },
-    { video: iv5, image: productImage5, title: "Zero Royale SmartWatch ", price: "11,699", oldPrice: "15,999", rating: "4.8", reviews: "4", discount: "27%" },
-    { video: iv1, image: productImage6, title: "HUAWEI Band 9 ", price: "12,999", oldPrice: "17,999", rating: "4.7", reviews: "8", discount: "28%" },
-    { video: iv2, image: productImage7, title: "Anker R50i Earbuds ", price: "9,499", oldPrice: "12,499", rating: "4.5", reviews: "12", discount: "24%" },
-    { video: iv8, image: productImage8, title: "Itel S24 ", price: "14,499", oldPrice: "19,999", rating: "4.9", reviews: "10", discount: "30%" },
-    { video: iv9, image: productImage9, title: "Apple AirPods  ", price: "9,499", oldPrice: "12,499", rating: "4.5", reviews: "12", discount: "24%" },
-    { video: iv10, image: productImage10, title: "Audionic Airbud 550 ", price: "14,499", oldPrice: "19,999", rating: "4.9", reviews: "10", discount: "30%" },
+    {
+      video: iv1,
+      image: productImage,
+      title: "Redmi Watch 5 Lite",
+      price: "11,699",
+      oldPrice: "15,999",
+      rating: "4.8",
+      reviews: "4",
+      discount: "27%",
+    },
+    {
+      video: iv2,
+      image: productImage2,
+      title: "Anker A30i  Earbuds ",
+      price: "7,200",
+      oldPrice: "9,000",
+      rating: "5.0",
+      reviews: "0",
+      discount: "20%",
+    },
+    {
+      video: iv3,
+      image: productImage3,
+      title: "JS Watch 6 SmartWatch ",
+      price: "4,799",
+      oldPrice: "6,500",
+      rating: "4.5",
+      reviews: "",
+      discount: "26%",
+    },
+    {
+      video: iv4,
+      image: productImage4,
+      title: "Lenovo Livepods XT81 ",
+      price: "11,999",
+      oldPrice: "31,999",
+      rating: "4.8",
+      reviews: "8",
+      discount: "63%",
+    },
+    {
+      video: iv5,
+      image: productImage5,
+      title: "Zero Royale SmartWatch ",
+      price: "11,699",
+      oldPrice: "15,999",
+      rating: "4.8",
+      reviews: "4",
+      discount: "27%",
+    },
+    {
+      video: iv1,
+      image: productImage6,
+      title: "HUAWEI Band 9 ",
+      price: "12,999",
+      oldPrice: "17,999",
+      rating: "4.7",
+      reviews: "8",
+      discount: "28%",
+    },
+    {
+      video: iv2,
+      image: productImage7,
+      title: "Anker R50i Earbuds ",
+      price: "9,499",
+      oldPrice: "12,499",
+      rating: "4.5",
+      reviews: "12",
+      discount: "24%",
+    },
+    {
+      video: iv8,
+      image: productImage8,
+      title: "Itel S24 ",
+      price: "14,499",
+      oldPrice: "19,999",
+      rating: "4.9",
+      reviews: "10",
+      discount: "30%",
+    },
+    {
+      video: iv9,
+      image: productImage9,
+      title: "Apple AirPods  ",
+      price: "9,499",
+      oldPrice: "12,499",
+      rating: "4.5",
+      reviews: "12",
+      discount: "24%",
+    },
+    {
+      video: iv10,
+      image: productImage10,
+      title: "Audionic Airbud 550 ",
+      price: "14,499",
+      oldPrice: "19,999",
+      rating: "4.9",
+      reviews: "10",
+      discount: "30%",
+    },
   ];
 
   return (
     <Container className="mt-5">
-<Box className="text-center my-5">
-<Typography  variant="h5">Loved and Recommended</Typography>
-<Typography variant="h6">Influencers talk about priceoye as a trusted brand</Typography>
-</Box>
+      <Box className="text-center my-5">
+        <Typography variant="h5">Loved and Recommended</Typography>
+        <Typography variant="h6">
+          Influencers talk about priceoye as a trusted brand
+        </Typography>
+      </Box>
       <Swiper
         slidesPerView={4} // Default slides for larger screens
         grid={{ rows: 1 }}
@@ -62,7 +153,6 @@ const InfluencersVideos = () => {
           768: { slidesPerView: 3, spaceBetween: 15 }, // Tablets
           1024: { slidesPerView: 4, spaceBetween: 20 }, // Laptops and desktops
         }}
-  
       >
         {videoCards.map((card, index) => (
           <SwiperSlide key={index}>
@@ -153,7 +243,11 @@ const InfluencersVideos = () => {
                     <img
                       src="https://static.priceoye.pk/images/stars.svg"
                       alt="Rating Star"
-                      style={{ width: "12px", height: "12px", marginRight: "5px" }}
+                      style={{
+                        width: "12px",
+                        height: "12px",
+                        marginRight: "5px",
+                      }}
                     />
                     <Typography variant="body2" sx={{ fontWeight: "bold" }}>
                       {card.rating}

@@ -19,17 +19,16 @@ const Login = () => {
   const onSubmit = (data) => {
     const storedEmail = localStorage.getItem("userEmail");
     const storedPassword = localStorage.getItem("userPassword");
-  
+
     if (data.mail === storedEmail && data.password === storedPassword) {
       // Set the login state in localStorage
-      localStorage.setItem("isLoggedIn", true); 
+      localStorage.setItem("isLoggedIn", true);
       alert("Login Successful!");
       navigate("/"); // Redirect to Profile page
     } else {
       alert("Invalid email or password");
     }
   };
-  
 
   return (
     <>
@@ -79,7 +78,9 @@ const Login = () => {
 
         {/* Replace Login/Register with Profile button if logged in */}
         {loggedIn && (
-          <button><Link to="/ProfileSection" > My Profile </Link> </button>
+          <button>
+            <Link to="/ProfileSection"> My Profile </Link>{" "}
+          </button>
         )}
       </Box>
     </>
@@ -87,7 +88,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
-
