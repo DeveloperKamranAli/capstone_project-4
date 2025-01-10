@@ -52,8 +52,7 @@ const TrackOrder = () => {
                   {product.name}
                 </h4>
                 <p style={{ fontSize: "1rem", color: "#333" }}>
-                  <strong>Price:</strong> PKR{" "}
-                  {product.price.toLocaleString()}
+                  <strong>Price:</strong> PKR {product.price.toLocaleString()}
                 </p>
                 <p style={{ fontSize: "1rem", color: "#555" }}>
                   <strong>Status:</strong>{" "}
@@ -66,7 +65,9 @@ const TrackOrder = () => {
           </div>
         ))
       ) : (
-        <p style={{ fontSize: "1.25rem", color: "#888" }}>No products selected.</p>
+        <p style={{ fontSize: "1.25rem", color: "#888" }}>
+          No products selected.
+        </p>
       )}
     </div>
   );

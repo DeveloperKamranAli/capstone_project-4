@@ -1,9 +1,8 @@
-import { Box, Typography } from '@mui/material';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Import Swiper styles
-
+import { Box, Typography } from "@mui/material";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css"; // Import Swiper styles
 
 const products1 = [
   {
@@ -15,8 +14,10 @@ const products1 = [
     discount: "62% OFF",
     rating: 4.8,
     reviews: 538,
-    imageUrl: "https://images.priceoye.pk/audionic-airbud-550-pakistan-priceoye-o6fve-270x270.webp",
-    description: "High-quality wireless earbuds with a comfortable fit and impressive sound clarity."
+    imageUrl:
+      "https://images.priceoye.pk/audionic-airbud-550-pakistan-priceoye-o6fve-270x270.webp",
+    description:
+      "High-quality wireless earbuds with a comfortable fit and impressive sound clarity.",
   },
   {
     id: 2,
@@ -27,8 +28,10 @@ const products1 = [
     discount: "36% OFF",
     rating: 4.7,
     reviews: 30,
-    imageUrl: "https://images.priceoye.pk/anker-r50i-earbuds-pakistan-priceoye-csv44-270x270.webp",
-    description: "Experience premium audio quality with long battery life and fast charging capabilities."
+    imageUrl:
+      "https://images.priceoye.pk/anker-r50i-earbuds-pakistan-priceoye-csv44-270x270.webp",
+    description:
+      "Experience premium audio quality with long battery life and fast charging capabilities.",
   },
   {
     id: 3,
@@ -39,8 +42,10 @@ const products1 = [
     discount: "16% OFF",
     rating: 4.4,
     reviews: 11,
-    imageUrl: "https://images.priceoye.pk/xiaomi-redmi-buds-6-lite-wireless-earbuds-pakistan-priceoye-c4dfa-270x270.webp",
-    description: "Lightweight earbuds featuring advanced noise cancellation and seamless connectivity."
+    imageUrl:
+      "https://images.priceoye.pk/xiaomi-redmi-buds-6-lite-wireless-earbuds-pakistan-priceoye-c4dfa-270x270.webp",
+    description:
+      "Lightweight earbuds featuring advanced noise cancellation and seamless connectivity.",
   },
   {
     id: 4,
@@ -51,8 +56,10 @@ const products1 = [
     discount: "39% OFF",
     rating: 4.1,
     reviews: 14,
-    imageUrl: "https://images.priceoye.pk/qcy-t13-anc-2-pakistan-priceoye-uvlbc-270x270.webp",
-    description: "Affordable earbuds with active noise cancellation and crystal-clear audio quality."
+    imageUrl:
+      "https://images.priceoye.pk/qcy-t13-anc-2-pakistan-priceoye-uvlbc-270x270.webp",
+    description:
+      "Affordable earbuds with active noise cancellation and crystal-clear audio quality.",
   },
   {
     id: 5,
@@ -63,8 +70,10 @@ const products1 = [
     discount: "36% OFF",
     rating: 4.5,
     reviews: 60,
-    imageUrl: "https://images.priceoye.pk/redmi-buds-6-active-wireless-earbuds-pakistan-priceoye-h6kkk-270x270.webp",
-    description: "Durable and stylish earbuds offering superb sound quality for music and calls."
+    imageUrl:
+      "https://images.priceoye.pk/redmi-buds-6-active-wireless-earbuds-pakistan-priceoye-h6kkk-270x270.webp",
+    description:
+      "Durable and stylish earbuds offering superb sound quality for music and calls.",
   },
   {
     id: 6,
@@ -75,10 +84,11 @@ const products1 = [
     discount: "25% OFF",
     rating: 3.7,
     reviews: 6,
-    imageUrl: "https://images.priceoye.pk/soundpeats-engine4-wireless-earbuds-pakistan-priceoye-40ifu-270x270.webp",
-    description: "Engineered for bass enthusiasts with dual drivers and ergonomic design."
+    imageUrl:
+      "https://images.priceoye.pk/soundpeats-engine4-wireless-earbuds-pakistan-priceoye-40ifu-270x270.webp",
+    description:
+      "Engineered for bass enthusiasts with dual drivers and ergonomic design.",
   },
-
 ];
 
 const products2 = [
@@ -91,8 +101,10 @@ const products2 = [
     discount: "25% OFF",
     rating: 4.6,
     reviews: 13,
-    imageUrl: "https://images.priceoye.pk/soundpeats-engine4-wireless-earbuds-pakistan-priceoye-40ifu-270x270.webp",
-    description: "High-quality wireless earbuds with a comfortable fit and impressive sound clarity."
+    imageUrl:
+      "https://images.priceoye.pk/soundpeats-engine4-wireless-earbuds-pakistan-priceoye-40ifu-270x270.webp",
+    description:
+      "High-quality wireless earbuds with a comfortable fit and impressive sound clarity.",
   },
   {
     id: 8,
@@ -103,8 +115,10 @@ const products2 = [
     discount: "39% OFF",
     rating: 4.9,
     reviews: 38,
-    imageUrl: "https://images.priceoye.pk/imilab-imiki-mt2-wireless-erbuds-pakistan-priceoye-obxhu-270x270.webp",
-    description: "Experience premium audio quality with long battery life and fast charging capabilities."
+    imageUrl:
+      "https://images.priceoye.pk/imilab-imiki-mt2-wireless-erbuds-pakistan-priceoye-obxhu-270x270.webp",
+    description:
+      "Experience premium audio quality with long battery life and fast charging capabilities.",
   },
   {
     id: 9,
@@ -115,8 +129,10 @@ const products2 = [
     discount: "42% OFF",
     rating: 4.9,
     reviews: 42,
-    imageUrl: "https://images.priceoye.pk/realme-t100-wireless-earbuds-pakistan-priceoye-tq6ud-270x270.webp",
-    description: "Lightweight earbuds featuring advanced noise cancellation and seamless connectivity."
+    imageUrl:
+      "https://images.priceoye.pk/realme-t100-wireless-earbuds-pakistan-priceoye-tq6ud-270x270.webp",
+    description:
+      "Lightweight earbuds featuring advanced noise cancellation and seamless connectivity.",
   },
   {
     id: 10,
@@ -127,8 +143,10 @@ const products2 = [
     discount: "36% OFF",
     rating: 4.7,
     reviews: 31,
-    imageUrl: "https://images.priceoye.pk/anker-r50i-earbuds-pakistan-priceoye-csv44-270x270.webp",
-    description: "Durable earbuds offering superb sound quality for music and calls."
+    imageUrl:
+      "https://images.priceoye.pk/anker-r50i-earbuds-pakistan-priceoye-csv44-270x270.webp",
+    description:
+      "Durable earbuds offering superb sound quality for music and calls.",
   },
   {
     id: 11,
@@ -139,8 +157,10 @@ const products2 = [
     discount: "58% OFF",
     rating: 4.8,
     reviews: 45,
-    imageUrl: "https://images.priceoye.pk/audionic-airbud-590-wireless-earbuds-pakistan-priceoye-tpz2q-270x270.webp",
-    description: "Affordable earbuds engineered for bass enthusiasts with ergonomic design."
+    imageUrl:
+      "https://images.priceoye.pk/audionic-airbud-590-wireless-earbuds-pakistan-priceoye-tpz2q-270x270.webp",
+    description:
+      "Affordable earbuds engineered for bass enthusiasts with ergonomic design.",
   },
   {
     id: 12,
@@ -151,11 +171,12 @@ const products2 = [
     discount: "58% OFF",
     rating: 4.8,
     reviews: 45,
-    imageUrl: "https://images.priceoye.pk/audionic-airbud-590-wireless-earbuds-pakistan-priceoye-tpz2q-270x270.webp",
-    description: "Durable and stylish earbuds offering superb sound quality for music and calls."
+    imageUrl:
+      "https://images.priceoye.pk/audionic-airbud-590-wireless-earbuds-pakistan-priceoye-tpz2q-270x270.webp",
+    description:
+      "Durable and stylish earbuds offering superb sound quality for music and calls.",
   },
 ];
-
 
 const Products = () => {
   const navigate = useNavigate();
@@ -170,7 +191,7 @@ const Products = () => {
         {/* Sale Badge */}
         <Box
           component="img"
-          src="https://images.priceoye.pk/badges/priceoye-sale-20241212-w3sbv.png"
+          src="https://images.priceoye.pk/badges/priceoye-sale-20250105-c968h.png"
           alt="Sale Badge"
           className="position-absolute"
           style={{
@@ -210,10 +231,18 @@ const Products = () => {
               height: "10px",
             }}
           />
-          <Typography variant="body2" className="mx-1" style={{ fontSize: "0.9rem" }}>
+          <Typography
+            variant="body2"
+            className="mx-1"
+            style={{ fontSize: "0.9rem" }}
+          >
             {product.rating}
           </Typography>
-          <Typography variant="caption" className="text-muted" style={{ fontSize: "0.8rem" }}>
+          <Typography
+            variant="caption"
+            className="text-muted"
+            style={{ fontSize: "0.8rem" }}
+          >
             {product.reviews} Reviews
           </Typography>
         </Box>
@@ -232,26 +261,36 @@ const Products = () => {
             }}
             title={product.name} // Show full name on hover
           >
-            {product.name.length > 18 ? `${product.name.substring(0, 18)}...` : product.name}
+            {product.name.length > 18
+              ? `${product.name.substring(0, 18)}...`
+              : product.name}
           </Typography>
-          <Typography variant="h6" className="text-success fw-normal" style={{ fontSize: "1.2rem" }}>
-            Rs {product.price}
+          <Typography
+            variant="h6"
+            className="text-secondary fw-normal"
+            style={{ fontSize: "1.2rem" }}
+          >
+            <sup> Rs</sup>
+            {product.price}
           </Typography>
           <Box className="d-flex justify-content-between w-100 mt-1">
             <Typography
               variant="body2"
-              className="text-danger text-decoration-line-through"
+              className="text-secondary text-decoration-line-through"
               style={{ fontSize: "0.9rem" }}
             >
-              Rs {product.retailPrice}
+              <sup> Rs</sup> {product.retailPrice}
             </Typography>
-            <Typography variant="body2" className="text-success" style={{ fontSize: "0.9rem" }}>
+            <Typography
+              variant="body2"
+              className="text-success"
+              style={{ fontSize: "0.9rem" }}
+            >
               {product.discount}
             </Typography>
           </Box>
         </Box>
       </Box>
-
     </SwiperSlide>
   );
 
@@ -262,7 +301,7 @@ const Products = () => {
           <div className="latest-product-box p-4 rounded">
             {/* Header Section */}
             <div className="d-flex justify-content-between align-items-center pl-heading mb-4">
-              <h1 className="h5 text-white">Earbuds</h1>
+              <h1 className="h5 text-white">Latest Wireless Earbuds</h1>
               <span className="btn btn-light">View All</span>
             </div>
 
@@ -325,7 +364,4 @@ const Products = () => {
   );
 };
 
-
 export default Products;
-   
-  

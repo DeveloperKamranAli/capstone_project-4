@@ -30,7 +30,7 @@ import WatchIcon from "@mui/icons-material/Watch";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
 // router pages
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 
 const popularLists = [
@@ -129,6 +129,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const Navigate = useNavigate();
 
   const handleCategoryClick = (categoryName) => {
     setExpandedCategory(
@@ -179,9 +180,13 @@ const Header = () => {
                 >
                   <Box>
                     <Typography className="d-flex flex-column justify-content-center h-50 mb-5 mt-4">
-                      <Link to="Header">
-                        <img className="w-50 mb-2" src={Logo} alt="" />
-                      </Link>
+                      <img
+                        className="w-50 mb-2"
+                        src={Logo}
+                        onClick={() => Navigate("/")}
+                        alt=""
+                      />
+
                       <Button
                         className="btn-login border  w-50 me-3 px-3 mb-2 bg-white"
                         style={{ color: "rgb(72,175,255)" }}
@@ -326,7 +331,12 @@ const Header = () => {
               </Drawer>
             </Box>
             <Typography className="me-1">
-              <img style={{ width: "100px" }} src={Logo} alt="" />
+              <img
+                style={{ width: "100px" }}
+                src={Logo}
+                onClick={() => Navigate("/")}
+                alt=""
+              />
             </Typography>
 
             <Box
@@ -355,7 +365,6 @@ const Header = () => {
             <Box className="d-md-none d-none d-md-block d-lg-block">
               {isLoggedIn ? (
                 <Button className="btn-profile me-3 px-3">
-                  {/* <Link to="/ProfileSection" className="text-decoration-none"> */}
                   <div>
                     <IconButton
                       className="text-white"
@@ -367,6 +376,7 @@ const Header = () => {
                       <AccountCircle />
                     </IconButton>
                     <Menu
+                      className="mt-4"
                       id="menu-appbar"
                       anchorEl={anchorEl}
                       anchorOrigin={{
@@ -389,7 +399,9 @@ const Header = () => {
                           My Account
                         </Link>
                       </MenuItem>
-                      <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+                      <MenuItem onClick={() => Navigate(`/Trackorder`)}>
+                        Track my Order
+                      </MenuItem>
                     </Menu>
                   </div>
                   {/* </Link> */}

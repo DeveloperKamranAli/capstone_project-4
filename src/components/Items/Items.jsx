@@ -54,7 +54,6 @@ const Items = () => {
                 "&:hover": {
                   backgroundColor: "#f0f0f0", // Light background color on hover
                   borderBottom: "2px solid skyblue", // Bolder border
-                  
                 },
               }}
             >
@@ -64,7 +63,6 @@ const Items = () => {
                 style={{
                   width: "45px",
                   height: "45px",
-            
                 }}
               />
               <p

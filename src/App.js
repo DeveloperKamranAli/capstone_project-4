@@ -4,6 +4,9 @@ import "./App.css";
 import Items from './components/Items/Items.jsx'
 import salebanner from "./assets Pic/cerve images sale.gif";
 import Products from "./components/ProductsOne/Products.jsx";
+import ProductTwo from './components/productTwo/ProductTwo.jsx';
+import ProductThree from './components/productsThree/ProductsThree.jsx';
+import ProductFour from './components/productsFour/productsFour.jsx'
 
 // Import Swiper styles
 import "swiper/css";
@@ -43,8 +46,11 @@ function App() {
       <InfluencersVideos />
 
       <BestWatch/>
+      <ProductTwo />
+      <ProductThree />
       <BrandsReviews />
       <BuyingCards />
+      <ProductFour />
       <Services />
       <Footer />
     </div>
