@@ -126,8 +126,7 @@ const MainNavigation = () => {
 
 const Header = () => {
   const [expandedCategory, setExpandedCategory] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const location = useLocation();
+ 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const Navigate = useNavigate();
 
@@ -143,17 +142,18 @@ const Header = () => {
     setOpen(newOpen);
   };
 
-  // Check login status from localStorage on component mount
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState(""); // Store the user's first name
+  const location = useLocation();
+  // Check login status and retrieve user's name from localStorage
   useEffect(() => {
     const storedLoginStatus = localStorage.getItem("isLoggedIn");
+    const storedFirstName = localStorage.getItem("userfirstName");
+
     if (storedLoginStatus === "true") {
       setIsLoggedIn(true);
+      setUserName(storedFirstName || ""); // Set the user's name if available
     }
-  }, [location]);
-
-  // Log the current location whenever it changes
-  useEffect(() => {
-    console.log("Current location:", location);
   }, [location]);
 
   const handleMenu = (event) => {
@@ -363,64 +363,69 @@ const Header = () => {
             {/* login page register*/}
 
             <Box className="d-md-none d-none d-md-block d-lg-block">
-              {isLoggedIn ? (
-                <Button className="btn-profile me-3 px-3">
-                  <div>
-                    <IconButton
-                      className="text-white"
-                      aria-label="account of current user"
-                      aria-controls="menu-appbar"
-                      aria-haspopup="true"
-                      onClick={handleMenu}
-                    >
-                      <AccountCircle />
-                    </IconButton>
-                    <Menu
-                      className="mt-4"
-                      id="menu-appbar"
-                      anchorEl={anchorEl}
-                      anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      keepMounted
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
-                    >
-                      <MenuItem onClick={handleClose}>
-                        <Link
-                          to="/ProfileSection"
-                          className="text-decoration-none text-dark"
-                        >
-                          My Account
-                        </Link>
-                      </MenuItem>
-                      <MenuItem onClick={() => Navigate(`/Trackorder`)}>
-                        Track my Order
-                      </MenuItem>
-                    </Menu>
-                  </div>
-                  {/* </Link> */}
-                </Button>
-              ) : (
-                <>
-                  <Button className="btn-login border me-3 px-3 bg-white">
-                    <Link to="/LoginPage" className="text-decoration-none">
-                      log in
-                    </Link>
-                  </Button>
-                  <Button className="btn-register border px-3 text-white">
-                    <Link to="/RegisterPage" className="text-decoration-none">
-                      Register
-                    </Link>
-                  </Button>
-                </>
-              )}
-            </Box>
+      {isLoggedIn ? (
+        <Button className="btn-profile me-2 px-2">
+          <Box>
+            <IconButton
+              className="text-white"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+            >
+              <AccountCircle />
+            </IconButton>
+            <span className="text-white">{userName}</span> {/* Display user name */}
+            <Menu
+              className="mt-4"
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>
+                <Link
+                  to="/Addprofile"
+                  className="text-decoration-none text-dark"
+                >
+                  My Account
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link
+                  to="/TrackOrder"
+                  className="text-decoration-none text-dark"
+                >
+                  Track my Order
+                </Link>
+              </MenuItem>
+            </Menu>
+          </Box>
+        </Button>
+      ) : (
+        <>
+          <Button className="btn-login border me-3 px-3 bg-white">
+            <Link to="/LoginPage" className="text-decoration-none">
+              Log in
+            </Link>
+          </Button>
+          <Button className="btn-register border px-3 text-white">
+            <Link to="/RegisterPage" className="text-decoration-none">
+              Register
+            </Link>
+          </Button>
+        </>
+      )}
+    </Box>
           </Toolbar>
         </AppBar>
       </Box>

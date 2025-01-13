@@ -28,81 +28,114 @@ const ProductDetails = () => {
     navigate("/DeliveryPage"); // Navigate to delivery page
   };
 
+  const buttonStyles = {
+    width: "20vh",
+    color: "white",
+    transition: "transform 0.2s, box-shadow 0.2s",
+  };
+
+  const handleHover = (e, isHover) => {
+    e.target.style.transform = isHover ? "scale(1.05)" : "scale(1)";
+    e.target.style.boxShadow = isHover
+      ? "0 4px 15px rgba(0, 0, 0, 0.3)"
+      : "none";
+  };
+
+  const stars = Array(3).fill("⭐");
+
   return (
-    <Box className="container mt-5">
-      <Box className="row g-4 align-items-center">
-        <Typography className="col-md-5 text-center">
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className="img-fluid border border-3 rounded-5 py-3 px-4"
-            style={{ width: "35vh" }}
-          />
-        </Typography>
-        <Box className="col-md-7">
-          <h4 className="fw-bold">{product.name}</h4>
-          <h5 className="text-muted">Brand: {product.brand}</h5>
-          <p className="mt-3">{product.description}</p>
-          <div className="mt-4">
-            <h4 className="text-info-emphasis mb-1">
-              Rs {product.price.toLocaleString()}
-            </h4>
-            <Typography className="w-50 d-flex justify-content-between">
-              <span className="text-muted text-decoration-line-through">
-                Rs {product.retailPrice.toLocaleString()}
-              </span>
-              <span className="ms-3 text-info-emphasis fw-bold">
-                {product.discount}
-              </span>
-            </Typography>
-          </div>
-          <Typography
-            className="d-flex mt-5 justify-content-center mt-3"
-            style={{ width: "47vh" }}
-          >
-            <Button
-              className="me-3"
-              style={{
-                width: "20vh",
-                backgroundColor: "#f88b2a",
-                color: "white",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = "scale(1.05)";
-                e.target.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = "scale(1)";
-                e.target.style.boxShadow = "none";
-              }}
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </Button>
-            <Button
-              style={{
-                width: "20vh",
-                backgroundColor: "#48afff",
-                color: "white",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.transform = "scale(1.05)";
-                e.target.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.transform = "scale(1)";
-                e.target.style.boxShadow = "none";
-              }}
-            >
-              Compare
-            </Button>
+    <>
+      <Box className="container-fluid shadow p-2 mb-5 bg-body-tertiary rounded">
+        <Box className="container">
+          <Typography variant="5">
+            Wireless Earbuds > CMF > Nothing Buds Pro 2
           </Typography>
+          <Typography className="fw-semibold">
+            Buy Nothing Buds Pro 2 Price in Pakistan
+          </Typography>
+        </Box>
+      </Box>
+      <Box className="container mt-5">
+        <Box className="row g-4 justify-content-center align-items-center">
+          <Typography
+            className="col-md-5 text-center"
+            style={{ width: "35vh" }}
+          >
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="img-fluid border border-3 rounded-5 py-3 px-4"
+            />
+          </Typography>
+          <Box className="col-md-7">
+            <Typography variant="h5" className="fw-bold">
+              {product.name}
+            </Typography>
+            {/* Render the stars */}
+            <Box className="d-flex mt-1">
+              {stars.map((star, index) => (
+                <span key={index}>{star}</span>
+              ))}
+              <h5 className="text-muted">{product.brand}</h5>
+            </Box>
+            <p className="mt-3">{product.description}</p>
+            <Box className="mt-4">
+              <Typography
+                className="d-flex justify-content-between"
+                style={{ width: "39vh" }}
+              >
+                <h4 className="text-info-emphasis fw-bold mb-1">
+                  Rs {product.price.toLocaleString()}
+                </h4>
+                <span className="ms-3 fs-5 text-info-emphasis fw-bold">
+                  {product.Stock}
+                </span>
+              </Typography>
+              <Typography
+                className="d-flex justify-content-between"
+                style={{ width: "39vh" }}
+              >
+                <span className="text-muted text-decoration-line-through">
+                  Rs {product.retailPrice.toLocaleString()}
+                </span>
+                <span className="ms-3 text-info-emphasis">
+                  {product.discount}
+                </span>
+              </Typography>
+            </Box>
+            <Typography className="d-flex mt-5 mt-3" style={{ width: "47vh" }}>
+              <Button
+                className="me-3"
+                style={{
+                  width: "20vh",
+                  backgroundColor: "#f88b2a",
+                  color: "white",
+                }}
+                onMouseOver={(e) => handleHover(e, true)}
+                onMouseOut={(e) => handleHover(e, false)}
+                onClick={handleAddToCart}
+              >
+                Add to Cart
+              </Button>
+              <Button
+                style={{
+                  width: "20vh",
+                  backgroundColor: "#48afff",
+                  color: "white",
+                }}
+                onMouseOver={(e) => handleHover(e, true)}
+                onMouseOut={(e) => handleHover(e, false)}
+              >
+                Compare
+              </Button>
+            </Typography>
+          </Box>
         </Box>
       </Box>
       <Box className="bg-body-tertiary mt-5">
         <OurService />
       </Box>
-    </Box>
+    </>
   );
 };
 

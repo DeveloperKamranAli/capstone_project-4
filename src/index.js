@@ -8,6 +8,7 @@ import Login from "./components/LoginPage/login";
 import Register from "./components/RegisterPage/register";
 import TrackOrder from "./components/TrackMyOrder/TrackOrder";
 import Profile from "./components/ProfileSection/Profile";
+import AddProfile from './components/ProfileSection/AddProfile';
 import ProductOne from "./components/ProductsOne/Products";
 import ProductDetails from "./components/ProductsOne/ProductDetail";
 import Delivery from "./components/Delivery/Delivery";
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "ProfileSection",
         element: <Profile />,
+      },
+      {
+      path: "addprofile",
+      element:<AddProfile />,
       },
       {
         path: "productsOne",

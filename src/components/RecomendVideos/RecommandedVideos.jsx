@@ -155,7 +155,7 @@ const InfluencersVideos = () => {
         }}
       >
         {videoCards.map((card, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="border d-flex justify-content-center" key={index}>
             <Box
               sx={{
                 width: "250px",
@@ -224,7 +224,7 @@ const InfluencersVideos = () => {
                     sx={{
                       display: "inline",
                       textDecoration: "line-through",
-                      color: "red",
+                      color: "gray",
                       marginLeft: "5px",
                     }}
                   >
@@ -262,7 +262,7 @@ const InfluencersVideos = () => {
                   <Box
                     sx={{
                       backgroundColor: "#d4f4e4",
-                      color: "#28a745",
+                      color: "#28a74",
                       padding: "2px 8px",
                       borderRadius: "5px",
                       fontSize: "12px",

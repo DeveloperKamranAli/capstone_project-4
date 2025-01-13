@@ -4,7 +4,8 @@ const products1 = [
   {
     id: 1,
     name: "Audionic Airbud 550",
-    brand: "Audionic",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3811,
     retailPrice: 9990,
     discount: "62% OFF",
@@ -18,7 +19,8 @@ const products1 = [
   {
     id: 2,
     name: "Anker R50i Earbuds",
-    brand: "Anker",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4611,
     retailPrice: 7199,
     discount: "36% OFF",
@@ -32,7 +34,8 @@ const products1 = [
   {
     id: 3,
     name: "Xiaomi Redmi Buds 6 Lite",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 5899,
     retailPrice: 6999,
     discount: "16% OFF",
@@ -46,7 +49,8 @@ const products1 = [
   {
     id: 4,
     name: "QCY T13 ANC 2",
-    brand: "QCY",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4549,
     retailPrice: 7399,
     discount: "39% OFF",
@@ -60,7 +64,8 @@ const products1 = [
   {
     id: 5,
     name: "Redmi Buds 6  Wireless Earbuds",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4611,
     retailPrice: 7199,
     discount: "36% OFF",
@@ -74,7 +79,8 @@ const products1 = [
   {
     id: 6,
     name: "Soundpeats Wireless Earbuds",
-    brand: "Soundpeats",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 10518,
     retailPrice: 14000,
     discount: "25% OFF",
@@ -91,7 +97,8 @@ const products2 = [
   {
     id: 7,
     name: "Soundpeats  Earbuds",
-    brand: "Soundpeats",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 10518,
     retailPrice: 41400,
     discount: "25% OFF",
@@ -105,7 +112,8 @@ const products2 = [
   {
     id: 8,
     name: "Imiki MT2 Wireless Earbuds",
-    brand: "Imiki",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4299,
     retailPrice: 69999,
     discount: "39% OFF",
@@ -119,7 +127,8 @@ const products2 = [
   {
     id: 9,
     name: "Realme T100 Wireless Earbuds",
-    brand: "Realme",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 9999,
     retailPrice: 15999,
     discount: "42% OFF",
@@ -133,7 +142,8 @@ const products2 = [
   {
     id: 10,
     name: "Anker R50i Earbuds",
-    brand: "Anker",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4611,
     retailPrice: 7199,
     discount: "36% OFF",
@@ -147,7 +157,8 @@ const products2 = [
   {
     id: 11,
     name: "Audionic Airbud 590  Earbuds",
-    brand: "Audionic",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3499,
     retailPrice: 4999,
     discount: "58% OFF",
@@ -161,7 +172,8 @@ const products2 = [
   {
     id: 12,
     name: "Xiaomi Wireless Earbuds", // Updated company name to Xiaomi
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 9499,
     retailPrice: 9499,
     discount: "58% OFF",
@@ -177,7 +189,8 @@ const products3 = [
   {
     id: 13,
     name: "Huawei Watch 2 Pro",
-    brand: "Huawei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 5799,
     retailPrice: 7500,
     discount: "23% OFF",
@@ -190,7 +203,8 @@ const products3 = [
   {
     id: 14,
     name: "Ultra Smart Watch with 7 Straps",
-    brand: "Generic",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 1679,
     retailPrice: 8079,
     discount: "79% OFF",
@@ -204,7 +218,8 @@ const products3 = [
   {
     id: 15,
     name: "YOLO Ultra Smart Watch",
-    brand: "YOLO",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 7999,
     retailPrice: 17999,
     discount: "56% OFF",
@@ -217,7 +232,8 @@ const products3 = [
   {
     id: 16,
     name: "Huawei Band 9",
-    brand: "Huawei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 9899,
     retailPrice: 20551,
     discount: "51% OFF",
@@ -230,7 +246,8 @@ const products3 = [
   {
     id: 17,
     name: "G-Tide R1 Smart Watch",
-    brand: "G-Tide",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 9100,
     retailPrice: 18200,
     discount: "50% OFF",
@@ -243,7 +260,8 @@ const products3 = [
   {
     id: 18,
     name: "Apple Watch Ultra 49mm",
-    brand: "Apple",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 224999,
     retailPrice: 300000,
     discount: "25% OFF",
@@ -259,7 +277,8 @@ const products4 = [
   {
     id: 19,
     name: "HK9 Pro Max Plus Smart Watch",
-    brand: "HK9",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 5799,
     retailPrice: 8000,
     discount: "27% OFF",
@@ -273,7 +292,8 @@ const products4 = [
   {
     id: 20,
     name: "Realme Smart Watch",
-    brand: "Realme",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3499,
     retailPrice: 14999,
     discount: "77% OFF",
@@ -287,7 +307,8 @@ const products4 = [
   {
     id: 21,
     name: "Mibro Watch Lite 3 with Dual Strap",
-    brand: "Mibro",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 11999,
     retailPrice: 22500,
     discount: "47% OFF",
@@ -300,7 +321,8 @@ const products4 = [
   {
     id: 22,
     name: "Xiaomi Redmi Watch 5 Active",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 6999,
     retailPrice: 18000,
     discount: "52% OFF",
@@ -314,7 +336,8 @@ const products4 = [
   {
     id: 23,
     name: "Apple Watch SE 44mm",
-    brand: "Apple",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 75999,
     retailPrice: 189999,
     discount: "60% OFF",
@@ -328,7 +351,8 @@ const products4 = [
   {
     id: 24,
     name: "Huawei Fit 2 Smartwatch",
-    brand: "Huawei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 27799,
     retailPrice: 49999,
     discount: "44% OFF",
@@ -345,7 +369,8 @@ const products5 = [
   {
     id: 25,
     name: "Examine Redmi S3X",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 16299,
     retailPrice: 20999,
     discount: "22% OFF",
@@ -358,7 +383,8 @@ const products5 = [
   {
     id: 26,
     name: "Tecno Spark Charity",
-    brand: "Tecno",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 36999,
     retailPrice: 39999,
     discount: "8% OFF",
@@ -371,7 +397,8 @@ const products5 = [
   {
     id: 27,
     name: "Vivo V40e",
-    brand: "Vivo",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 89999,
     retailPrice: 99999,
     discount: "10% OFF",
@@ -384,7 +411,8 @@ const products5 = [
   {
     id: 28,
     name: "Idle S24",
-    brand: "Itel",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 25299,
     retailPrice: 33999,
     discount: "26% OFF",
@@ -397,7 +425,8 @@ const products5 = [
   {
     id: 29,
     name: "Examine Redmi S3",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 19299,
     retailPrice: 23999,
     discount: "20% OFF",
@@ -410,7 +439,8 @@ const products5 = [
   {
     id: 30,
     name: "Apple iPhone 16 Pro",
-    brand: "Apple",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 425500,
     retailPrice: 446000,
     discount: "5% OFF",
@@ -427,7 +457,8 @@ const products6 = [
   {
     id: 31,
     name: "XAML POCO C75",
-    brand: "Xiaomi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 31999,
     retailPrice: 36999,
     discount: "14% OFF",
@@ -441,7 +472,8 @@ const products6 = [
   {
     id: 32,
     name: "Samsung Galaxy",
-    brand: "Samsung",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 22999,
     retailPrice: 26999,
     discount: "15% OFF",
@@ -455,7 +487,8 @@ const products6 = [
   {
     id: 33,
     name: "Realme C75",
-    brand: "Realme",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 42899,
     retailPrice: 49999,
     discount: "14% OFF",
@@ -469,7 +502,8 @@ const products6 = [
   {
     id: 34,
     name: "Samsung Galaxy A16",
-    brand: "Samsung",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 51699,
     retailPrice: 54999,
     discount: "6% OFF",
@@ -483,7 +517,8 @@ const products6 = [
   {
     id: 35,
     name: "Realme C6",
-    brand: "Realme",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 19400,
     retailPrice: 32999,
     discount: "11% OFF",
@@ -497,7 +532,8 @@ const products6 = [
   {
     id: 36,
     name: "Apple iPhone 16 Pro Max",
-    brand: "Apple",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 499999,
     retailPrice: 526999,
     discount: "5% OFF",
@@ -514,7 +550,8 @@ const products7 = [
   {
     id: 37,
     name: "VG0T Blade Trimmer",
-    brand: "VGR",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 2559,
     retailPrice: 5500,
     discount: "53% OFF",
@@ -528,7 +565,8 @@ const products7 = [
   {
     id: 38,
     name: "Stainless Steel Blade Trimmer",
-    brand: "VGR",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 2499,
     retailPrice: 6000,
     discount: "58% OFF",
@@ -542,7 +580,8 @@ const products7 = [
   {
     id: 39,
     name: "Personal Groomer Kit PG180",
-    brand: "Remington",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 5899,
     retailPrice: 6900,
     discount: "15% OFF",
@@ -556,7 +595,8 @@ const products7 = [
   {
     id: 40,
     name: "Grooming Kit Shaving Machine",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3699,
     retailPrice: 7000,
     discount: "47% OFF",
@@ -570,7 +610,8 @@ const products7 = [
   {
     id: 41,
     name: "Hair and Beard Trimmer",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 1799,
     retailPrice: 3700,
     discount: "53% OFF",
@@ -584,7 +625,8 @@ const products7 = [
   {
     id: 42,
     name: "Graphite Series  Kit",
-    brand: "Remington",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 11399,
     retailPrice: 11900,
     discount: "4% OFF",
@@ -601,7 +643,8 @@ const products8 = [
   {
     id: 43,
     name: "Rechargeable Electric Shaver",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 1749,
     retailPrice: 3700,
     discount: "53% OFF",
@@ -615,7 +658,8 @@ const products8 = [
   {
     id: 44,
     name: "USB Charging Grooming Kit",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 1849,
     retailPrice: 3000,
     discount: "38% OFF",
@@ -629,7 +673,8 @@ const products8 = [
   {
     id: 45,
     name: "Professional Hair Clipper",
-    brand: "Dinglong",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 2259,
     retailPrice: 4500,
     discount: "50% OFF",
@@ -643,7 +688,8 @@ const products8 = [
   {
     id: 46,
     name: "Multi-Purpose Grooming Kit",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3559,
     retailPrice: 7000,
     discount: "49% OFF",
@@ -656,7 +702,8 @@ const products8 = [
   {
     id: 47,
     name: "Advanced Shaving Machine",
-    brand: "Mi",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 4499,
     retailPrice: 7500,
     discount: "40% OFF",
@@ -670,7 +717,8 @@ const products8 = [
   {
     id: 48,
     name: "Professional Hair Clipper 702B",
-    brand: "Kemei",
+    brand: "5.0 | 1 Review",
+    Stock: "In Stock",
     price: 3999,
     retailPrice: 8000,
     discount: "50% OFF",

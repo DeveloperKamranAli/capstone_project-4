@@ -27,7 +27,9 @@ const Items = () => {
   ];
 
   return (
-    <div className="container my-3">
+    <>
+    <Box className="border container-fluid shadow p-3 mb-3 bg-body-tertiary rounded">
+    <Box className="container">
       <Swiper
         spaceBetween={15}
         slidesPerView="auto"
@@ -47,7 +49,6 @@ const Items = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 textAlign: "center",
-                p: 3,
                 cursor: "pointer",
                 position: "relative",
                 borderBottom: "2px solid transparent", // Default border
@@ -62,11 +63,11 @@ const Items = () => {
                 alt={item.label}
                 style={{
                   width: "45px",
-                  height: "45px",
+                  height: "37px",
                 }}
               />
               <p
-                className="mt-2"
+                className="mt-1"
                 style={{
                   fontSize: "12px",
                 }}
@@ -77,7 +78,10 @@ const Items = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </Box>
+    </Box>
+
+    </>
   );
 };
 
