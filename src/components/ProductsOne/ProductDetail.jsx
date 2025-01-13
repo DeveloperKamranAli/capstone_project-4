@@ -27,13 +27,7 @@ const ProductDetails = () => {
     // Save selected product in Redux
     navigate("/DeliveryPage"); // Navigate to delivery page
   };
-
-  const buttonStyles = {
-    width: "20vh",
-    color: "white",
-    transition: "transform 0.2s, box-shadow 0.2s",
-  };
-
+  
   const handleHover = (e, isHover) => {
     e.target.style.transform = isHover ? "scale(1.05)" : "scale(1)";
     e.target.style.boxShadow = isHover
