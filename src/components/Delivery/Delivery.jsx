@@ -66,7 +66,7 @@ const Delivery = () => {
   };
 
   return (
-    <div className="container mt-5" style={{ width: "70vh" }}>
+    <div className="container mt-5">
       {selectedProduct && (
         <div className="card mb-4 shadow-lg rounded-lg">
           <h4 className="card-header bg-primary text-white p-3">

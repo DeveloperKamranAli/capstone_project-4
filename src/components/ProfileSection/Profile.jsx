@@ -4,7 +4,7 @@ import Brightness7TwoToneIcon from "@mui/icons-material/Brightness7TwoTone";
 import { AccountCircle } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-const AddProfile = () => {
+const Profile = () => {
   const [userName, setUserName] = useState(""); // Store the user's first name
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
   const navigate = useNavigate();
@@ -209,4 +209,4 @@ const AddProfile = () => {
   );
 };
 
-export default AddProfile;
+export default Profile;

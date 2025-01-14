@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-const Profile = () => {
+const AddProfile = () => {
   const {
     register,
     handleSubmit,
@@ -45,7 +45,7 @@ const Profile = () => {
   return (
     <div className="d-flex justify-content-center mt-5">
       <div className="border rounded-2 d-flex flex-column justify-content-center background-color w-75 shadow p-3 mb-5 bg-body-tertiary rounded">
-        <h1 className="text-center mb-4 mt-3">My Profile</h1>
+        <h1 className="text-center mb-4 mt-3">Edit Profile</h1>
         <form onSubmit={handleSubmit(handleUpdate)}>
           {/* Email Input */}
           <div className="d-flex flex-column align-items-center">
@@ -127,4 +127,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default AddProfile;

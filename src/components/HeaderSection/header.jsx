@@ -142,8 +142,8 @@ const Header = () => {
     setOpen(newOpen);
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState(""); // Store the user's first name
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
   // Check login status and retrieve user's name from localStorage
   useEffect(() => {
@@ -394,7 +394,7 @@ const Header = () => {
             >
               <MenuItem onClick={handleClose}>
                 <Link
-                  to="/Addprofile"
+                  to="/ProfileSection"
                   className="text-decoration-none text-dark"
                 >
                   My Account
