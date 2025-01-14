@@ -33,6 +33,9 @@
     ]
   },
   "browserslist": {
+    "resolutions": {
+  "babel-preset-react-app": "npm:babel-preset-react-app"
+},
     "production": [
       ">0.2%",
       "not dead",
