@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// mui icons
+import React from "react"; 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,25 +10,11 @@ import MicIcon from "@mui/icons-material/Mic";
 import MobileScreenShareIcon from "@mui/icons-material/MobileScreenShare";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
-// assets images
 import Logo from "../../assets Pic/logo.svg";
-import {
-  Collapse,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-} from "@mui/material";
-// assets images category
-import mobiles from "../../assets Pic/pk-galaxy.avif";
+import { Collapse, Divider, IconButton, List, ListItem, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
 import WatchIcon from "@mui/icons-material/Watch";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
-// router pages
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AccountCircle } from "@mui/icons-material";
 
@@ -44,7 +29,6 @@ const popularLists = [
   { name: "Best PUBG Mpbiles" },
 ];
 
-const categories = [{ name: "mobiles", image: mobiles }];
 // Category Data
 const drawerCategories = [
   {
@@ -90,44 +74,45 @@ const drawerCategories = [
   },
 ];
 
-const MainNavigation = () => {
-  return (
-    <Box className="sb-nav-box sb-row" sx={{ padding: 0 }}>
-      <Typography
-        sx={{
-          marginBottom: 1,
-          marginLeft: 2,
-          color: "gray",
-          fontWeight: 400,
-        }}
-      >
-        MAIN NAVIGATION
-      </Typography>
-      <List sx={{ padding: 0 }}>
-        <ListItem>
-          <ListItemText primary="About Us" />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary="FAQs" />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary="Contact" />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary="Privacy Policy" />
-        </ListItem>
-        <ListItem>
-          <ListItemText primary="Terms & Conditions" />
-        </ListItem>
-      </List>
-    </Box>
-  );
-};
+const MainNavigation = () => (
+  <Box className="sb-nav-box sb-row" sx={{ padding: 0 }}>
+    <Typography
+      sx={{
+        marginBottom: 1,
+        marginLeft: 2,
+        color: "gray",
+        fontWeight: 400,
+      }}
+    >
+      MAIN NAVIGATION
+    </Typography>
+    <List sx={{ padding: 0 }}>
+      <ListItem>
+        <ListItemText primary="About Us" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="FAQs" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Contact" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Privacy Policy" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Terms & Conditions" />
+      </ListItem>
+    </List>
+  </Box>
+);
 
 const Header = () => {
-  const [expandedCategory, setExpandedCategory] = useState(null);
- 
+  const [expandedCategory, setExpandedCategory] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+  const [userName, setUserName] = React.useState(""); 
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const location = useLocation();
   const Navigate = useNavigate();
 
   const handleCategoryClick = (categoryName) => {
@@ -136,23 +121,17 @@ const Header = () => {
     );
   };
 
-  const [open, setOpen] = React.useState(false);
-
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
-  const [userName, setUserName] = useState(""); // Store the user's first name
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const location = useLocation();
-  // Check login status and retrieve user's name from localStorage
-  useEffect(() => {
+  React.useEffect(() => {
     const storedLoginStatus = localStorage.getItem("isLoggedIn");
     const storedFirstName = localStorage.getItem("userfirstName");
 
     if (storedLoginStatus === "true") {
       setIsLoggedIn(true);
-      setUserName(storedFirstName || ""); // Set the user's name if available
+      setUserName(storedFirstName || ""); 
     }
   }, [location]);
 
@@ -184,11 +163,10 @@ const Header = () => {
                         className="w-50 mb-2"
                         src={Logo}
                         onClick={() => Navigate("/")}
-                        alt=""
+                        alt="Logo"
                       />
-
                       <Button
-                        className="btn-login border  w-50 me-3 px-3 mb-2 bg-white"
+                        className="btn-login border w-50 me-3 px-3 mb-2 bg-white"
                         style={{ color: "rgb(72,175,255)" }}
                       >
                         <Link to="/LoginPage" className="text-decoration-none">
@@ -201,19 +179,18 @@ const Header = () => {
                           to="TrackOrderPage"
                           className="text-decoration-none text-white"
                         >
-                          {" "}
                           Track my order
                         </Link>{" "}
                       </Typography>
                       <Typography className="text-white">
-                        <TextSnippetIcon /> Launch a omplaint
+                        <TextSnippetIcon /> Launch a complaint
                       </Typography>
                     </Typography>
                   </Box>
                 </Box>
 
                 <List>
-                  {drawerCategories.map((category, index) => (
+                  {drawerCategories.map((category) => (
                     <div key={category.name}>
                       <ListItem
                         button
@@ -223,47 +200,14 @@ const Header = () => {
                         <ListItemText primary={category.name} />
                       </ListItem>
 
-                      {/* Divider below "headings" */}
-                      {category.name === "Mobiles" && (
-                        <Divider
-                          sx={{
-                            borderColor: "#4da6ff",
-                            my: 1,
-                            width: "100%",
-                            margin: "0 auto",
-                          }}
-                        />
-                      )}
-                      {category.name === "Smart Watches" && (
-                        <Divider
-                          sx={{
-                            borderColor: "#4da6ff",
-                            my: 1,
-                            width: "100%",
-                            margin: "0 auto",
-                          }}
-                        />
-                      )}
-                      {category.name === "Wireless Earbuds" && (
-                        <Divider
-                          sx={{
-                            borderColor: "#4da6ff",
-                            my: 1,
-                            width: "100%",
-                            margin: "0 auto",
-                          }}
-                        />
-                      )}
-                      {category.name === "Power Banks" && (
-                        <Divider
-                          sx={{
-                            borderColor: "#4da6ff",
-                            my: 1,
-                            width: "100%",
-                            margin: "0 auto",
-                          }}
-                        />
-                      )}
+                      <Divider
+                        sx={{
+                          borderColor: "#4da6ff",
+                          my: 1,
+                          width: "100%",
+                          margin: "0 auto",
+                        }}
+                      />
 
                       <Collapse
                         in={expandedCategory === category.name}
@@ -286,7 +230,6 @@ const Header = () => {
                   ))}
                 </List>
 
-                {/* Popular List Section */}
                 <Typography
                   variant="subtitle1"
                   sx={{ padding: "8px 16px", backgroundColor: "#f0f5ff" }}
@@ -304,7 +247,7 @@ const Header = () => {
                   {popularLists.map((item, index) => (
                     <a
                       key={index}
-                      href={item.link}
+                      href={item.link || "#"}
                       style={{ textDecoration: "none" }}
                     >
                       <Button
@@ -335,12 +278,12 @@ const Header = () => {
                 style={{ width: "100px" }}
                 src={Logo}
                 onClick={() => Navigate("/")}
-                alt=""
+                alt="Logo"
               />
             </Typography>
 
             <Box
-              className="position-rilative d-flex justify-content-center"
+              className="position-relative d-flex justify-content-center"
               variant="h6"
               component="div"
               sx={{ flexGrow: 1 }}
@@ -360,72 +303,67 @@ const Header = () => {
               </Typography>
             </Box>
 
-            {/* login page register*/}
-
             <Box className="d-md-none d-none d-md-block d-lg-block">
-      {isLoggedIn ? (
-        <Button className="btn-profile me-2 px-2">
-          <Box>
-            <IconButton
-              className="text-white"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-            >
-              <AccountCircle />
-            </IconButton>
-            <span className="text-white">{userName}</span> {/* Display user name */}
-            <Menu
-              className="mt-4"
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>
-                <Link
-                  to="/ProfileSection"
-                  className="text-decoration-none text-dark"
-                >
-                  My Account
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link
-                  to="/TrackOrder"
-                  className="text-decoration-none text-dark"
-                >
-                  Track my Order
-                </Link>
-              </MenuItem>
-            </Menu>
-          </Box>
-        </Button>
-      ) : (
-        <>
-          <Button className="btn-login border me-3 px-3 bg-white">
-            <Link to="/LoginPage" className="text-decoration-none">
-              Log in
-            </Link>
-          </Button>
-          <Button className="btn-register border px-3 text-white">
-            <Link to="/RegisterPage" className="text-decoration-none">
-              Register
-            </Link>
-          </Button>
-        </>
-      )}
-    </Box>
+              {isLoggedIn ? (
+                <Box className="btn-profile me-2 px-2">
+                  <Box>
+                    <IconButton
+                      className="text-white"
+                      onClick={handleMenu}
+                    >
+                      <AccountCircle />
+                    </IconButton>
+                    <span className="text-white">{userName}</span>
+                    <Menu
+                      className="mt-4"
+                      id="menu-appbar"
+                      anchorEl={anchorEl}
+                      anchorOrigin={{
+                        vertical: "top",
+                        horizontal: "right",
+                      }}
+                      keepMounted
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "right",
+                      }}
+                      open={Boolean(anchorEl)}
+                      onClose={handleClose}
+                    >
+                      <MenuItem onClick={handleClose}>
+                        <Link
+                          to="/ProfileSection"
+                          className="text-decoration-none text-dark"
+                        >
+                          My Account
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          to="/TrackOrder"
+                          className="text-decoration-none text-dark"
+                        >
+                          Track my Order
+                        </Link>
+                      </MenuItem>
+                    </Menu>
+                  </Box>
+                </Box>
+              ) : (
+                <>
+                  <Button className="btn-login border me-3 px-3 bg-white">
+                    <Link to="/LoginPage" className="text-decoration-none">
+                      Log in
+                    </Link>
+                  </Button>
+                  <Button className="btn-register border px-3 text-white">
+                    <Link to="/RegisterPage" className="text-decoration-none">
+                      Register
+                    </Link>
+                  </Button>
+                </>
+              )}
+            </Box>
           </Toolbar>
         </AppBar>
       </Box>
@@ -434,3 +372,4 @@ const Header = () => {
 };
 
 export default Header;
+

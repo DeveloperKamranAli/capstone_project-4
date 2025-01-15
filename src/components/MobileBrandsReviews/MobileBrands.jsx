@@ -189,24 +189,25 @@ const BrandsAndReviews = () => {
           },
         }}
       >
-        {images.map((image) => (
-          <SwiperSlide key={image.id}>
-            <div className="swiper-content d-flex justify-content-center align-items-center">
-              <img
-                src={image.src}
-                alt={image.alt}
-                onClick={() => console.log(`Review ID: ${image.id}`)}
-                className="rounded border"
-                style={{
-                  width: "152px",
-                  height: "157px",
-                  objectFit: "contain",
-                  cursor: "pointer",
-                }}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
+     {images.map((image, index) => (
+  <SwiperSlide key={index}>
+    <div className="swiper-content d-flex justify-content-center align-items-center">
+      <img
+        src={image.src}
+        alt={image.alt}
+        onClick={() => console.log(`Review ID: ${image.id}`)}
+        className="rounded border"
+        style={{
+          width: "152px",
+          height: "157px",
+          objectFit: "contain",
+          cursor: "pointer",
+        }}
+      />
+    </div>
+  </SwiperSlide>
+))}
+
       </Swiper>
 
       <Box></Box>
