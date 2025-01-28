@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
+import backgroundImage from '../../assets Pic/section-earbuds-bg-image.png'
 
 const products1 = [
   {
@@ -296,13 +297,17 @@ const Products = () => {
 
   return (
     <div>
-      <div className="w-100 mt-5" style={{ backgroundColor: "#F94F9A" }}>
+     
+      <div className="w-100 mt-3">
+      <div className="position-absolute" >
+      <img className="w-100" style={{height:"82vh"}} src={backgroundImage} alt="" />
+      </div>
         <div className="container">
           <div className="latest-product-box p-4 rounded">
             {/* Header Section */}
-            <div className="d-flex justify-content-between align-items-center pl-heading mb-4">
-              <h1 className="h5 text-white">Latest Wireless Earbuds</h1>
-              <span className="btn btn-light">View All</span>
+            <div className="d-flex justify-content-between align-items-center pl-heading mb-2">
+              <h1 className="h5 text-white z-2">Latest Wireless Earbuds</h1>
+              <span className="btn btn-light z-2">View All</span>
             </div>
 
             {/* Swiper Section */}
@@ -331,9 +336,9 @@ const Products = () => {
             >
               {products1.map(renderProductCard)}
             </Swiper>
-            {/* Swiper Section */}
+          
             <Swiper
-              className="pt-5"
+              className="pt-3"
               slidesPerView={4} // Default for large screens
               spaceBetween={15}
               breakpoints={{

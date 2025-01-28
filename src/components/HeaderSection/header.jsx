@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,7 +11,17 @@ import MobileScreenShareIcon from "@mui/icons-material/MobileScreenShare";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import Logo from "../../assets Pic/logo.svg";
-import { Collapse, Divider, IconButton, List, ListItem, ListItemIcon, ListItemText, Menu, MenuItem } from "@mui/material";
+import {
+  Collapse,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import WatchIcon from "@mui/icons-material/Watch";
 import HeadphonesIcon from "@mui/icons-material/Headphones";
 import BatteryChargingFullIcon from "@mui/icons-material/BatteryChargingFull";
@@ -110,7 +120,7 @@ const Header = () => {
   const [expandedCategory, setExpandedCategory] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-  const [userName, setUserName] = React.useState(""); 
+  const [userName, setUserName] = React.useState("");
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const location = useLocation();
   const Navigate = useNavigate();
@@ -131,7 +141,7 @@ const Header = () => {
 
     if (storedLoginStatus === "true") {
       setIsLoggedIn(true);
-      setUserName(storedFirstName || ""); 
+      setUserName(storedFirstName || "");
     }
   }, [location]);
 
@@ -141,6 +151,21 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    // Clear specific keys
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userPassword");
+    localStorage.removeItem("userfirstName");
+    localStorage.removeItem("isLoggedIn");
+  
+    // Alternatively, clear entire localStorage
+    // localStorage.clear();
+  
+    // Update state and redirect
+    setIsLoggedIn(false);
+    Navigate("/");
   };
 
   return (
@@ -306,49 +331,58 @@ const Header = () => {
             <Box className="d-md-none d-none d-md-block d-lg-block">
               {isLoggedIn ? (
                 <Box className="btn-profile me-2 px-2">
-                  <Box>
-                    <IconButton
-                      className="text-white"
-                      onClick={handleMenu}
+                <IconButton className="text-white" onClick={handleMenu}>
+                  <AccountCircle />
+                </IconButton>
+                <span className="text-white">{userName}</span>
+                <Menu
+                  className="mt-4"
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <Link
+                      to="/ProfileSection"
+                      className="text-decoration-none text-dark"
                     >
-                      <AccountCircle />
-                    </IconButton>
-                    <span className="text-white">{userName}</span>
-                    <Menu
-                      className="mt-4"
-                      id="menu-appbar"
-                      anchorEl={anchorEl}
-                      anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      keepMounted
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                      }}
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
+                      My Account
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link
+                      to="/TrackOrder"
+                      className="text-decoration-none text-dark"
                     >
-                      <MenuItem onClick={handleClose}>
-                        <Link
-                          to="/ProfileSection"
-                          className="text-decoration-none text-dark"
-                        >
-                          My Account
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link
-                          to="/TrackOrder"
-                          className="text-decoration-none text-dark"
-                        >
-                          Track my Order
-                        </Link>
-                      </MenuItem>
-                    </Menu>
-                  </Box>
-                </Box>
+                      Track my Order
+                    </Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <button
+                      className="btn btn-danger"
+                      onClick={handleLogout}
+                      style={{
+                        border: "none",
+                        backgroundColor: "transparent",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Logout
+                    </button>
+                  </MenuItem>
+                </Menu>
+              </Box>
               ) : (
                 <>
                   <Button className="btn-login border me-3 px-3 bg-white">
@@ -372,4 +406,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -1,13 +1,15 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify"; // Import react-toastify
+import "react-toastify/dist/ReactToastify.css"; // Import CSS
 
 // img assets
 import RegisterImg from "../../assets Pic/Register-header-img.svg";
 
 export default function Register() {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const {
     register,
@@ -17,13 +19,21 @@ export default function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // Simulate saving user data
     localStorage.setItem("userfirstName", data.firstName);
     localStorage.setItem("userEmail", data.mail);
     localStorage.setItem("userPassword", data.password);
 
-    console.log("User registered:", data);
-    navigate("/LoginPage");
+    // Show success toast
+    toast.success("User registered successfully!", {
+      position: "top-right",
+      autoClose: 3000, // 3 seconds
+    });
+
+    // Redirect to login after a delay
+    setTimeout(() => {
+      navigate("/LoginPage");
+    }, 3000);
   };
 
   return (
@@ -34,12 +44,12 @@ export default function Register() {
           className="d-flex flex-column align-items-center mx-2 shadow-lg p-3 mb-5 bg-body rounded"
         >
           <Box>
-            <img className="img-fluid mb-3" src={RegisterImg} alt="" />
+            <img className="img-fluid mb-3" src={RegisterImg} alt="Register" />
           </Box>
           <input
             className="outline-B rounded-2 py-1 w-75 mb-3"
-            {...register("firstName", { required: "Last name is required" })}
-            placeholder="first Name"
+            {...register("firstName", { required: "First name is required" })}
+            placeholder="First Name"
           />
           {errors.firstName && <p role="alert">{errors.firstName.message}</p>}
 
@@ -56,7 +66,7 @@ export default function Register() {
             {...register("mail", {
               required: "Email is required",
               pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,}$/,
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                 message: "Invalid email",
               },
             })}
@@ -97,9 +107,11 @@ export default function Register() {
           <input
             className="outline-B rounded-2 py-1 w-75 background-color text-white"
             type="submit"
+            value="Register"
           />
         </form>
       </Box>
+      <ToastContainer /> {/* ToastContainer for showing toasts */}
     </>
   );
 }

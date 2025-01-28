@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
 import staticBanner from "../../assets Pic/static-banner-bnpl-v4.jpg";
+import backgroundImage from '../../assets Pic/section-smart-watches-bg-md (1).png'
 
 const products3 = [
   {
@@ -290,18 +291,21 @@ const Products2 = () => {
 
   return (
     <div>
-      <div className="w-100 mt-5" style={{ backgroundColor: "#F1811D" }}>
+      <div className="w-100 mt-5">
+      <div className="position-absolute" >
+      <img className="w-100" style={{height:"82vh"}} src={backgroundImage} alt="" />
+      </div>
         <div className="container">
           <div className="latest-product-box p-4 rounded">
             {/* Header Section */}
             <div className="d-flex justify-content-between align-items-center pl-heading mb-4">
-              <h1 className="h5 text-white">Latest Smart Watches</h1>
-              <span className="btn btn-light">View All</span>
+              <h1 className="h5 text-white z-1">Latest Smart Watches</h1>
+              <span className="btn btn-light z-1">View All</span>
             </div>
 
             {/* Swiper Section */}
             <Swiper
-              className="pt-5"
+              className="pt-3"
               slidesPerView={4}
               spaceBetween={15}
               breakpoints={{
@@ -328,7 +332,7 @@ const Products2 = () => {
 
             {/* Swiper Section */}
             <Swiper
-              className="pt-5"
+              className="pt-3"
               slidesPerView={4} // Default for large screens
               spaceBetween={15}
               breakpoints={{

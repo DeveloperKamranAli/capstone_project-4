@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
+import backgroundImage from '../../assets Pic/section-earbuds-bg-image.png'
 import "swiper/swiper-bundle.css"; // Import Swiper styles
 
 const products7 = [
@@ -294,13 +295,16 @@ const Products4 = () => {
 
   return (
     <div>
-      <div className="w-100 mt-5" style={{ backgroundColor: "#F94F9A" }}>
+      <div className="w-100 mt-5">
+      <div className="position-absolute" >
+      <img className="w-100" style={{height:"82vh"}} src={backgroundImage} alt="" />
+      </div>
         <div className="container">
           <div className="latest-product-box p-4 rounded">
             {/* Header Section */}
             <div className="d-flex justify-content-between align-items-center pl-heading mb-4">
-              <h1 className="h5 text-white">Latest Trimmers Shaver</h1>
-              <span className="btn btn-light">View All</span>
+              <h1 className="h5 text-white z-1">Latest Trimmers Shaver</h1>
+              <span className="btn btn-light z-1">View All</span>
             </div>
             {/* Swiper Section */}
             <Swiper
@@ -331,7 +335,7 @@ const Products4 = () => {
 
             {/* Swiper Section */}
             <Swiper
-              className="pt-5"
+              className="pt-3"
               slidesPerView={4} // Default for large screens
               spaceBetween={15}
               breakpoints={{

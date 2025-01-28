@@ -155,7 +155,7 @@ const InfluencersVideos = () => {
         }}
       >
         {videoCards.map((card, index) => (
-          <SwiperSlide className="border d-flex justify-content-center" key={index}>
+          <SwiperSlide className="d-flex justify-content-center" key={index}>
             <Box
               sx={{
                 width: "250px",
